@@ -880,7 +880,7 @@ define([
               return nextType(new Error('\'xhr\' parameter is missing from callback'));
             }
 
-            if (xhr.status !== 200) {
+            if (xhr.status !== 200 && xhr.status !== 404) {
               Adapt.log.warn('getState() failed for ' + activityId + ' (' + type + ')');
               return nextType(new Error('Invalid status code ' + xhr.status + ' returned from getState() call'));
             }
